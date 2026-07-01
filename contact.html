@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Omnignis Technologies</title>
-<meta name="description" content="Get in touch with Omnignis Technologies. Tell us about your software, cybersecurity, or cloud project — the first conversation is free.">
+<meta name="description" content="Get in touch with Omnignis Technologies. Tell me about your software or cybersecurity project — the first conversation is free.">
 <link rel="icon" href="assets/favicon.png">
 <meta property="og:title" content="Contact — Omnignis Technologies">
 <meta property="og:description" content="Have a project in mind? Let's talk.">
@@ -24,12 +24,13 @@
       <img src="assets/emblem-nav.webp" alt="Omnignis emblem">
       <span class="name"><b>OMNIGNIS</b><span class="sub">TECHNOLOGIES</span></span>
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <div class="menu">
-      <a class="link" href="about.html">About</a>
       <a class="link" href="services.html">Services</a>
+      <a class="link" href="about.html">About</a>
+      <a class="link" href="churches.html">Churches</a>
       <a class="link active" href="contact.html">Contact</a>
-      <a class="link" href="cart.html">Cart</a>
-      <a href="contact.html" class="btn btn-ember">Get started</a>
+      <a href="book.html" class="btn btn-ember">Book a call</a>
     </div>
   </div>
 </nav>
@@ -47,17 +48,17 @@
       <h2>Have a project in mind?<br><span class="em">Let's talk.</span></h2>
       <p class="intro">Drop a quick note below and I'll get back to you fast — usually within one business day. Tell me what you're trying to build or protect, and we'll figure out the right move together. First conversation's on me.</p>
       <div class="contact-rows">
-        <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:hello@omnignis.com">hello@omnignis.com</a></div>
+        <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@omnignis.com">info@omnignis.com</a></div>
         <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 1112 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Pinehurst, TX · serving the greater Houston area</div>
-        <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Replies within one business day</div>
+        <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l5-3v10l-5-3v3a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h8a2 2 0 012 2z"/></svg>Prefer to talk live? <a href="book.html" style="color:var(--ember-hi);margin-left:4px">Book a Zoom call &rarr;</a></div>
       </div>
     </div>
 
     <div>
       <!-- ============================================================ -->
-      <!-- FORM SETUP: replace YOUR_FORM_ID below with your real        -->
-      <!-- Formspree form ID (free at formspree.io). Until you do, the  -->
-      <!-- form will show an error on submit. See README for steps.     -->
+      <!-- FORM SETUP: replace YOUR_FORM_ID below with your real         -->
+      <!-- Formspree form ID (free at formspree.io). Until you do, the   -->
+      <!-- form shows a friendly "not connected" note on submit.         -->
       <!-- ============================================================ -->
       <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="hidden" name="_subject" value="New inquiry from omnignis.com">
@@ -92,15 +93,16 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="assets/emblem-nav.webp" alt="Omnignis emblem"><span class="name">OMNIGNIS</span></div>
-        <div class="foot-tag">All fire. All systems. All secure.</div>
-        <div class="foot-meta">Pinehurst, TX · <a href="mailto:hello@omnignis.com">hello@omnignis.com</a></div>
+        <div class="foot-tag">Cybersecurity &amp; Software Development</div>
+        <div class="foot-meta">Pinehurst, TX · <a href="mailto:info@omnignis.com">info@omnignis.com</a></div>
       </div>
       <div class="foot-links">
-        <div class="foot-col"><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a></div>
-        <div class="foot-col"><h4>Services</h4><a href="services.html#software">Software</a><a href="services.html#cybersecurity">Cybersecurity</a><a href="services.html#cloud">Cloud Solutions</a></div>
+        <div class="foot-col"><h4>Explore</h4><a href="services.html">Services</a><a href="about.html">About</a><a href="churches.html">Churches</a><a href="contact.html">Contact</a></div>
+        <div class="foot-col"><h4>Get started</h4><a href="book.html">Book a call</a><a href="contact.html">Contact</a><a href="churches.html">Church reports</a></div>
+        <div class="foot-col"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
       </div>
     </div>
-    <div class="copy"><span>© 2026 Omnignis Technologies. All rights reserved.</span><span>Built with fire in Montgomery County, TX.</span></div>
+    <div class="copy"><span>© 2026 Omnignis LLC. All rights reserved.</span><span>Pinehurst, Texas</span></div>
   </div>
 </footer>
 
@@ -127,12 +129,13 @@
         } else { throw new Error('bad response'); }
       } catch(err){
         btn.disabled = false; btn.textContent = 'Send message';
-        note.textContent = 'Something went wrong. Email hello@omnignis.com directly and I\'ll sort it out.';
+        note.textContent = 'Something went wrong. Email info@omnignis.com directly and I\'ll sort it out.';
         note.style.color = '#ffa63a';
       }
     });
   })();
 </script>
 
+<script src="assets/nav.js" defer></script>
 </body>
 </html>
