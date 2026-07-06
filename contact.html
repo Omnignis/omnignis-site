@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Omnignis Technologies</title>
-<meta name="description" content="Get in touch with Omnignis Technologies. Tell me about your software or cybersecurity project — the first conversation is free.">
+<title>Contact | Omnignis Technologies</title>
+<meta name="description" content="Get in touch with Omnignis Technologies. Tell us about your software or cybersecurity project. The first conversation is free.">
 <link rel="icon" href="assets/favicon.png">
-<meta property="og:title" content="Contact — Omnignis Technologies">
+<meta property="og:title" content="Contact | Omnignis Technologies">
 <meta property="og:description" content="Have a project in mind? Let's talk.">
 <meta property="og:image" content="assets/og-image.png">
 <meta property="og:type" content="website">
@@ -48,7 +48,7 @@
 
     <div class="contact-side">
       <h2>Have a project in mind?<br><span class="em">Let's talk.</span></h2>
-      <p class="intro">Drop a quick note below and I'll get back to you fast — usually within one business day. Tell me what you're trying to build or protect, and we'll figure out the right move together. First conversation's on me.</p>
+      <p class="intro">Drop a quick note below and we'll get back to you fast, usually within one business day. Tell us what you're trying to build or protect, and we'll figure out the right move together. The first conversation is free.</p>
       <div class="contact-rows">
         <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@omnignis.com">info@omnignis.com</a></div>
         <div class="crow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 1112 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Pinehurst, TX · serving the greater Houston area</div>
@@ -79,11 +79,11 @@
           <input id="em" type="email" name="email" placeholder="jane@company.com" required>
         </div>
         <div class="field">
-          <label for="msg">What can I help with?</label>
+          <label for="msg">What can we help with?</label>
           <textarea id="msg" name="message" placeholder="A bit about your project, business, or the problem you're trying to solve…" required></textarea>
         </div>
         <button type="submit" class="btn btn-ember">Send message</button>
-        <p class="form-note" id="formNote">No spam, ever. Your details go straight to my inbox.</p>
+        <p class="form-note" id="formNote">No spam, ever. Your details go straight to our inbox.</p>
       </form>
     </div>
 
@@ -117,7 +117,7 @@
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
       if(form.action.indexOf('YOUR_FORM_ID') !== -1){
-        note.textContent = 'Form not connected yet — add your Formspree ID in contact.html. (See README.)';
+        note.textContent = 'Form not connected yet. Add your Formspree ID in contact.html. (See README.)';
         note.style.color = '#ffa63a';
         return;
       }
@@ -127,11 +127,11 @@
         if(res.ok){
           form.innerHTML = '<div style="text-align:center;padding:30px 6px">'+
             '<div style="font-family:var(--serif);font-size:30px;margin-bottom:10px">Message sent <span style="color:var(--ember)">.</span></div>'+
-            '<p style="color:var(--muted);font-size:16px">Thanks — I\'ll get back to you within one business day.</p></div>';
+            '<p style="color:var(--muted);font-size:16px">Thanks! We\'ll get back to you within one business day.</p></div>';
         } else { throw new Error('bad response'); }
       } catch(err){
         btn.disabled = false; btn.textContent = 'Send message';
-        note.textContent = 'Something went wrong. Email info@omnignis.com directly and I\'ll sort it out.';
+        note.textContent = 'Something went wrong. Email info@omnignis.com directly and we\'ll sort it out.';
         note.style.color = '#ffa63a';
       }
     });
