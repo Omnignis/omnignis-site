@@ -57,12 +57,7 @@
     </div>
 
     <div>
-      <!-- ============================================================ -->
-      <!-- FORM SETUP: replace YOUR_FORM_ID below with your real         -->
-      <!-- Formspree form ID (free at formspree.io). Until you do, the   -->
-      <!-- form shows a friendly "not connected" note on submit.         -->
-      <!-- ============================================================ -->
-      <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="form" id="contactForm" action="https://formspree.io/f/xeebdoav" method="POST">
         <input type="hidden" name="_subject" value="New inquiry from omnignis.com">
         <div class="frow">
           <div class="field">
@@ -116,11 +111,6 @@
     form.addEventListener('submit', async function(e){
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
-      if(form.action.indexOf('YOUR_FORM_ID') !== -1){
-        note.textContent = 'Form not connected yet. Add your Formspree ID in contact.html. (See README.)';
-        note.style.color = '#ffa63a';
-        return;
-      }
       btn.disabled = true; btn.textContent = 'Sending…';
       try{
         var res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
