@@ -1,167 +1,272 @@
-<!-- Last updated July 3, 2026 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omnignis Software &amp; Cybersecurity | Custom Software &amp; Security for Business</title>
-<meta name="description" content="Omnignis Software & Cybersecurity. We make custom software development and cybersecurity for businesses and organizations, built and secured by experienced engineers.">
-<link rel="icon" href="assets/favicon.png">
-<meta property="og:title" content="Omnignis Software Development &amp; Cybersecurity">
-<meta property="og:description" content="Custom software and cybersecurity, built and secured by experienced engineers.">
-<meta property="og:image" content="assets/og-image.png">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+<title>Omnignis — Cybersecurity for small practices and small businesses | Montgomery County, TX</title>
+<meta name="description" content="Fixed-scope cybersecurity assessments, hardening, and ongoing protection for independent practices and small businesses in Montgomery County, Texas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#F6F8F9;
+  --ink:#16232B;
+  --slate:#44586A;
+  --line:#D8E0E5;
+  --ember:#E4572E;
+  --ember-deep:#A93815;
+  --deep:#0E1A21;
+  --card:#FFFFFF;
+  --maxw:1060px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--porcelain);color:var(--ink);line-height:1.6;font-size:16.5px}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+/* ---------- Nav ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(246,248,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
+.brand .flame{width:22px;height:28px}
+.navlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.navlinks a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--slate)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--ember);color:#fff;text-decoration:none;font-weight:600;padding:11px 20px;border-radius:8px;font-size:.95rem;transition:background .15s ease}
+.btn:hover{background:var(--ember-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);transition:background .15s ease,color .15s ease}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.hamb{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamb span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:transform .2s,opacity .2s}
+@media(max-width:820px){
+  .hamb{display:block}
+  .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--porcelain);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 0}
+  .navlinks.open{display:flex}
+  .navlinks li{width:100%}
+  .navlinks a{display:block;padding:14px 24px}
+  .navlinks .btn{margin:10px 24px;text-align:center}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ember);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.06;letter-spacing:-.02em;max-width:15ch}
+.hero p.lede{margin-top:22px;font-size:1.2rem;color:var(--slate);max-width:56ch}
+.hero .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .local{margin-top:26px;font-size:.9rem;color:var(--slate)}
+.fade{animation:fadeup .6s ease both}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- Narrative ---------- */
+.narrative{padding:72px 0;border-bottom:1px solid var(--line)}
+.narrative h2, .services h2, .verticals h2, .about h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.015em;margin-bottom:14px}
+.casefile{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ember);border-radius:10px;padding:30px 32px;max-width:760px;margin-top:24px}
+.casefile p{color:var(--ink);font-size:1.05rem}
+.casefile p + p{margin-top:14px}
+.casefile .kicker{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--slate);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.narrative .punch{margin-top:26px;font-size:1.15rem;font-weight:600;max-width:56ch}
+.narrative .punch em{color:var(--ember);font-style:normal}
+
+/* ---------- Services ---------- */
+.services{padding:72px 0;border-bottom:1px solid var(--line)}
+.services .sub{color:var(--slate);max-width:60ch;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(22,35,43,.07)}
+.card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.08rem;font-weight:600;margin-bottom:8px}
+.card p{font-size:.94rem;color:var(--slate)}
+.card .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ember);border:1px solid var(--ember);border-radius:99px;padding:2px 10px;margin-bottom:12px;letter-spacing:.04em}
+.dev-note{margin-top:26px;background:transparent;border:1.5px dashed var(--line);border-radius:10px;padding:20px 24px;color:var(--slate);font-size:.95rem;max-width:760px}
+.dev-note strong{color:var(--ink)}
+
+/* ---------- What we don't do ---------- */
+.honesty{background:var(--deep);color:#E8EDF0;padding:64px 0}
+.honesty h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,1.9rem);letter-spacing:-.015em;margin-bottom:10px}
+.honesty .sub{color:#9FB2BC;max-width:62ch;margin-bottom:34px}
+.honesty .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.honesty h3{font-size:1rem;font-weight:600;margin-bottom:8px;color:#fff}
+.honesty p{font-size:.92rem;color:#9FB2BC}
+.honesty .no{font-family:'IBM Plex Mono',monospace;color:var(--ember);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:10px}
+
+/* ---------- Verticals ---------- */
+.verticals{padding:72px 0;border-bottom:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:30px}
+.vcard{border:1px solid var(--line);border-radius:10px;padding:26px;background:var(--card);text-decoration:none;transition:transform .15s ease,box-shadow .15s ease;display:block}
+.vcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(22,35,43,.07)}
+.vcard.feature{border:1.5px solid var(--ember)}
+.vcard h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:8px}
+.vcard p{font-size:.94rem;color:var(--slate)}
+.vcard .go{display:inline-block;margin-top:14px;font-weight:600;font-size:.92rem;color:var(--ember)}
+
+/* ---------- About ---------- */
+.about{padding:72px 0}
+.about .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+.about p{color:var(--slate);max-width:58ch}
+.about p + p{margin-top:14px}
+.about .facts{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px}
+.about .facts li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.about .facts li:last-child{border-bottom:none}
+.about .facts li::before{content:"—";color:var(--ember);margin-right:10px;font-weight:700}
+@media(max-width:820px){.about .cols{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--deep);color:#9FB2BC;padding:48px 0 36px;font-size:.9rem}
+footer .top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+footer .brand{color:#fff;font-size:1.1rem}
+footer a{color:#C7D3DA;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+footer .legal{border-top:1px solid #22333D;padding-top:22px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
+:focus-visible{outline:2.5px solid var(--ember);outline-offset:2px;border-radius:4px}
+</style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="fire" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.021" numOctaves="2" seed="4" result="n">
-      <animate attributeName="baseFrequency" dur="8s" repeatCount="indefinite"
-               values="0.009 0.021; 0.013 0.030; 0.008 0.018; 0.009 0.021"/>
-    </feTurbulence>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-</svg>
 
-<nav class="nav">
-  <div class="wrap nav-in">
-    <a href="index.html" class="brand" aria-label="Omnignis Software &amp; Cybersecurity home">
-      <img src="assets/emblem-nav.webp" alt="Omnignis emblem">
-      <span class="name"><b>OMNIGNIS</b><span class="sub">SOFTWARE & CYBERSECURITY</span></span>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Omnignis home">
+      <svg class="flame" viewBox="0 0 22 28" fill="none" aria-hidden="true"><path d="M11 0c1.4 4.6 5.6 6.9 8 10.4 2.6 3.8 2.6 9.2-.6 12.9C15.6 26.6 13.4 28 11 28c-2.4 0-4.6-1.4-7.4-4.7-3.2-3.7-3.2-9.1-.6-12.9C5.4 6.9 9.6 4.6 11 0Z" fill="#E4572E"/><path d="M11 10c.8 2.5 3 3.7 4.2 5.6 1.3 2 1.3 4.9-.3 6.8-1 1.2-2.4 1.6-3.9 1.6s-2.9-.4-3.9-1.6c-1.6-1.9-1.6-4.8-.3-6.8C8 13.7 10.2 12.5 11 10Z" fill="#F6F8F9"/></svg>
+      Omnignis
     </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <div class="menu">
-      <a class="link active" href="index.html">Home</a>
-      <a class="link" href="services.html">Services</a>
-      <!-- <a class="link" href="about.html">About</a> -->
-      <a class="link" href="churches.html">Churches</a>
-      <a class="link" href="contact.html">Contact</a>
-      <a href="https://portal.omnignis.com/login" class="btn btn-ghost">Sign in</a>
-      <a href="book.html" class="btn btn-ember">Book a call</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow reveal d1"><span class="dot"></span>Software Development &amp; Cybersecurity </div>
-      <h1 class="head reveal d2">Tech.<br>Made simple<span class="em">.</span></h1>
-      <p class="lede reveal d3">Custom software and cybersecurity for businesses and organizations built by experienced engineers.</p>
-      <div class="cta-row reveal d4">
-        <a href="book.html" class="btn btn-ember">Book a call</a>
-        <a href="services.html" class="link-arrow">See what we do <span class="arr">&rarr;</span></a>
-      </div>
-    </div>
-    <div class="stage reveal d2">
-      <div class="glow"></div>
-      <div class="emblem">
-        <img class="emblem-base" src="assets/emblem.webp" alt="Omnignis fire-and-circuit emblem">
-        <img class="emblem-flame" src="assets/flame.webp" alt="" aria-hidden="true">
-      </div>
-    </div>
+    <button class="hamb" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><span></span><span></span><span></span></button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="dental.html">For dental practices</a></li>
+      <li><a href="churches.html">For churches</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn" href="book.html">Book a 15-minute call</a></li>
+    </ul>
   </div>
 </header>
 
-<section class="section" id="focus">
+<section class="hero">
+  <div class="wrap fade">
+    <p class="eyebrow">Cybersecurity · Montgomery County, TX</p>
+    <h1>Who handles your cybersecurity?</h1>
+    <p class="lede">For most small practices and small businesses, the honest answer is nobody. Omnignis is the answer — fixed-scope assessments, hardening, and ongoing protection, delivered in plain English at a fixed price.</p>
+    <div class="ctas">
+      <a class="btn" href="book.html">Book a 15-minute call</a>
+      <a class="btn btn-ghost" href="dental.html">Dental practice? Start here</a>
+    </div>
+    <p class="local">Serving Conroe, The Woodlands, Magnolia, Tomball, Spring, and Willis — on site. Remote everywhere else.</p>
+  </div>
+</section>
+
+<section class="narrative">
   <div class="wrap">
-    <p class="kicker">What we do</p>
-    <h2 class="sec-head">Two things, done the right way the first time</h2>
-    <div class="pillars duo">
-      <div class="card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M13 4l-2 16"/></svg></div>
-        <h3>Software Development</h3>
-        <p>Custom software built around to fit your business.</p>
-        <ul class="slist">
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>Web apps, client portals, and internal tools</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>Automations that remove repetitive work</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>Dashboards, reporting, and API integrations</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M12 8c-1 1.5-2 2.5-2 4 0 1.3 1 2.2 2 2.2s2-.9 2-2.2c0-1.5-1-2.5-2-4z"/></svg></div>
-        <h3>Cybersecurity</h3>
-        <p>Finding, testing, and fixing security gaps before someone else does, saving you money.</p>
-        <ul class="slist">
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>Security assessments with a clear action plan</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>System, network, and cloud security hardening</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg><span>Security awareness training for your team</span></li>
-        </ul>
+    <h2>How small businesses actually lose money</h2>
+    <div class="casefile">
+      <p class="kicker">The pattern, start to finish</p>
+      <p>Someone on your team gets a convincing email and types their password into a fake login page. The attacker signs into that mailbox and sits there quietly — reading — for three weeks. They learn who pays whom, what invoices look like, who approves what.</p>
+      <p>Then they email your bookkeeper a real-looking invoice with new banking details. The money leaves. Nobody notices for a month.</p>
+    </div>
+    <p class="punch">A firewall doesn't stop that. Neither does a VPN or an antivirus box. <em>Identity controls, mail controls, and one boring process rule do.</em> That's what we fix.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="sub">Every engagement is fixed scope and fixed price. You know what you're buying, what it costs, and what you get at the end — before we start.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Start here</span><h3>Cybersecurity risk assessment</h3><p>A full review of how your business could lose money or data, delivered as a plain-English report with a prioritized fix list. For healthcare practices, this is the HIPAA Security Risk Analysis federal law already requires.</p></div>
+      <div class="card"><h3>Microsoft 365 / Google Workspace hardening</h3><p>MFA enforced properly, legacy sign-in methods closed, mail rules audited, forwarding locked down. This is where most real-world attacks on small business start — and end.</p></div>
+      <div class="card"><h3>Cyber insurance readiness</h3><p>Your carrier's questionnaire, answered accurately. We check what you actually have against what you're attesting to, and fix the gaps before they become a denied claim.</p></div>
+      <div class="card"><h3>Staff security training</h3><p>Short, practical sessions your team will actually remember — phishing, payment fraud, and the handful of habits that stop most attacks. Meets Texas HB 300 training requirements for healthcare workplaces.</p></div>
+      <div class="card"><h3>Backup that actually restores</h3><p>Microsoft and Google don't back up your data — they keep it available until something deletes it. We set up real backup, then prove it restores.</p></div>
+      <div class="card"><h3>Network segmentation &amp; firewall</h3><p>Your guest wifi, your business systems, and your most sensitive equipment shouldn't share one flat network. We separate them so one infected laptop can't reach everything.</p></div>
+      <div class="card"><h3>Managed detection &amp; reporting</h3><p>We deploy and tune alerting, review it weekly, and report monthly — business hours, next-business-day response, in writing. Honest coverage, honestly scoped.</p></div>
+      <div class="card"><h3>Security advisor (vCISO)</h3><p>A named person responsible for your security posture — monthly check-ins, policy upkeep, and the answer when a client, carrier, or regulator asks "who handles this?"</p></div>
+    </div>
+    <div class="dev-note"><strong>Custom software, on request.</strong> Omnignis is a cybersecurity practice first. But when a client needs internal tooling built — a portal, a report generator, an automation — we build it ourselves rather than referring it out. Ask.</div>
+  </div>
+</section>
+
+<section class="honesty">
+  <div class="wrap">
+    <h2>What we don't do</h2>
+    <p class="sub">A cybersecurity company you can trust should be clear about where its job ends. These three things are outside our scope — on purpose.</p>
+    <div class="cols">
+      <div><span class="no">Not offered</span><h3>Cameras, alarms &amp; door access</h3><p>Physical security systems are licensed work in Texas. We don't sell, install, service, monitor, or respond to them — and we'll refer you to a licensed integrator who does.</p></div>
+      <div><span class="no">Not offered</span><h3>24/7 emergency response</h3><p>We're a small practice and we won't promise coverage we can't deliver. Our contracts say business hours and next-business-day — and we keep a vetted incident-response firm on file for true emergencies.</p></div>
+      <div><span class="no">Not offered</span><h3>Investigations of people</h3><p>Finding out who did something is licensed private-investigation work in Texas. We handle the technical side and refer attribution questions to a licensed investigator.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="verticals">
+  <div class="wrap">
+    <h2>Built for your world</h2>
+    <div class="vgrid">
+      <a class="vcard feature" href="dental.html">
+        <h3>Dental practices</h3>
+        <p>HIPAA Security Risk Analysis, breach-notification readiness, HB 300 training, and hardening for the systems your practice runs on — priced for an independent office.</p>
+        <span class="go">See the dental program →</span>
+      </a>
+      <a class="vcard" href="churches.html">
+        <h3>Churches &amp; nonprofits</h3>
+        <p>Wire-fraud and gift-card scam prevention, donor data protection, and livestream attendance tools built specifically for congregations.</p>
+        <span class="go">See church services →</span>
+      </a>
+      <div class="vcard">
+        <h3>Professional offices</h3>
+        <p>Law firms, insurance agencies, CPAs, and other small offices that hold sensitive client data and answer to carriers, regulators, or clients about protecting it.</p>
+        <span class="go" style="color:var(--slate)">Book a call to talk it through</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0">
+<section class="about" id="about">
   <div class="wrap">
-    <p class="kicker">Why Omnignis</p>
-    <h2 class="sec-head">Senior-level work, without the agency runaround.</h2>
-    <div class="values">
-      <div class="value">
-        <h4><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Plain English</h4>
-        <p>You'll always know what's being built, why it matters, and what it costs upfront with no surprises.</p>
-      </div>
-      <div class="value">
-        <h4><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>Security-first</h4>
-        <p>Everything is built with security baked in from the start.</p>
-      </div>
-      <div class="value">
-        <h4><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>One point of contact</h4>
-        <p>You work directly with the person doing the work making for faster decisions and no handoffs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="spotlight">
+    <h2>About Omnignis</h2>
+    <div class="cols">
       <div>
-        <div class="sp-tag"><span class="dot"></span>For Churches</div>
-        <h2>Automated livestream attendance reports</h2>
-        <p>Connect your church's Facebook page once. After each livestream, Omnignis pulls the exact viewer numbers, builds a clean Excel report, and emails it to your office every week. No more manual counting.</p>
-        <a href="churches.html" class="btn btn-ember">See how it works</a>
+        <p>Omnignis comes from the Latin <em>omni</em> + <em>ignis</em> — "all fire." Fire is the oldest security technology there is: it keeps what matters warm, lit, and defended. That's the job.</p>
+        <p>The practice is run by Chris Robinson, a security engineer based in Pinehurst, Texas, with a master's in computer science (cybersecurity concentration) from Boston University. One person does the assessment, writes the report, and answers the phone — the person you meet is the person who does the work.</p>
       </div>
-      <div class="sp-visual"><img src="assets/emblem.webp" alt=""></div>
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap band-in">
-    <h2>Let's talk.</h2>
-    <p>Tell us what you'd like to build or protect</p>
-    <div class="btn-row">
-      <a href="book.html" class="btn btn-ember">Book a call</a>
-      <a href="contact.html" class="btn btn-ghost">Send a message</a>
+      <ul class="facts">
+        <li>Professional liability (E&amp;O) and cyber liability coverage in force</li>
+        <li>Business Associate Agreement signed before we touch any healthcare system</li>
+        <li>Assessments built on the federal HHS Security Risk Assessment methodology</li>
+        <li>Fixed scope, fixed price, plain-English deliverables</li>
+        <li>Locally owned — Montgomery County, Texas</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="top">
       <div>
-        <div class="foot-brand"><img src="assets/emblem-nav.webp" alt="Omnignis emblem"><span class="name">OMNIGNIS</span></div>
-        <div class="foot-tag">Cybersecurity &amp; Software Development</div>
-        <div class="foot-meta">Pinehurst, TX · <a href="mailto:info@omnignis.com">info@omnignis.com</a></div>
+        <p class="brand" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;margin-bottom:8px">Omnignis</p>
+        <p>Cybersecurity for small practices and small businesses.<br>Pinehurst, Texas · <a href="mailto:info@omnignis.com">info@omnignis.com</a></p>
       </div>
-      <div class="foot-links">
-        <div class="foot-col"><h4>Explore</h4><a href="services.html">Services</a><!--<a href="about.html">About</a>--><a href="churches.html">Churches</a><a href="contact.html">Contact</a></div>
-        <div class="foot-col"><h4>Get started</h4><a href="https://portal.omnignis.com/signup">Create an account</a><a href="https://portal.omnignis.com/login">Portal sign in</a><a href="book.html">Book a call</a><a href="contact.html">Contact</a><a href="churches.html">Church reports</a></div>
-        <div class="foot-col"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-      </div>
+      <ul>
+        <li><a href="dental.html">Dental practices</a></li>
+        <li><a href="churches.html">Churches</a></li>
+        <li><a href="book.html">Book a call</a></li>
+      </ul>
     </div>
-    <div class="copy"><span>© 2026 Omnignis LLC. All rights reserved.</span><span>Pinehurst, Texas</span></div>
+    <div class="legal">
+      <span>© 2026 Omnignis LLC. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="data-deletion.html">Data deletion</a></span>
+    </div>
   </div>
 </footer>
 
-<script src="assets/nav.js" defer></script>
+<script>
+function toggleNav(btn){
+  const nav=document.getElementById('navlinks');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+</script>
 </body>
 </html>
