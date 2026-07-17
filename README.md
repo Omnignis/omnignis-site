@@ -1,49 +1,39 @@
-# Omnignis Technologies — website (v2)
+# Omnignis — website (v3, porcelain)
 
 Static site, no build step. Edit files, `git push`, Vercel auto-deploys.
 
-## Pages
-- `index.html` — home (Cybersecurity & Software Development)
-- `services.html` — the two focuses + church reporting
-- `about.html` — about
-- `churches.html` — livestream reports for churches (explainer)
-- `book.html` — schedule a Zoom call (Calendly)
-- `contact.html` — contact form
-- `404.html` — not found
-- `assets/styles.css` — all styling, one file
+## What changed in v3
+- **One design system, every page.** All pages now share `assets/styles.css`, derived from the dental page: porcelain background, blue-slate ink, ember accent, Bricolage Grotesque + Public Sans + IBM Plex Mono. The old dark Fraunces theme is gone.
+- **Repositioned: cybersecurity first.** Nav brand reads OMNIGNIS / CYBERSECURITY. Services page leads with Assess & Harden → Ongoing Protection → Custom Software (on request) → Churches. "Security Snapshot" renamed **Cybersecurity Snapshot**.
+- **Header:** black link text, `Home` link on every page, brand mark always returns home. `Dental` added to the nav and footer site-wide.
+- **New pages on the system:** index and dental now use the shared stylesheet (was inline CSS); services, about, contact, book, churches, privacy, terms, data-deletion, and 404 all restyled.
+- **"What we don't do"** (cameras/alarms, 24/7 IR, investigations) now appears on index AND services — keep this; it's a legal guardrail, not just copy.
+- **CTA wording unified to "Book a call"** — the Calendly event is 30 minutes, so pages no longer promise a "15-minute" call.
+- **Nav mark is an inline SVG flame** (matches the dental page) — no dependency on emblem-nav.webp contrast against the light background. `assets/emblem.webp` is still used on About (and can be swapped back into the nav if it reads well on porcelain).
 
-## What changed from v1
-- Repositioned around **Cybersecurity & Software Development** (two focuses, not three).
-- Removed the "All fire / All systems / All secure" tagline everywhere.
-- Email is now **info@omnignis.com** site-wide.
-- Added **Book a call** (Calendly) and a **Churches** page for the livestream-report service.
-- Dropped the old `cart.html`.
-
-## Two things to connect (both free, ~2 min each)
-
-### 1. Booking — book.html
-1. Make a free account at https://calendly.com
-2. Create a 30-minute event, and under **Integrations** connect **Zoom** (so each booking auto-creates a Zoom link).
-3. Copy your event link, e.g. `https://calendly.com/omnignis/30min`
-4. In `book.html`, replace `YOUR-CALENDLY` in the `data-url` with your link (keep the `?hide_gdpr_banner=...` part — it themes the calendar to match the site).
-
-### 2. Contact form — contact.html
-1. Make a free form at https://formspree.io
-2. Copy the endpoint, e.g. `https://formspree.io/f/abcdwxyz`
-3. In `contact.html`, replace `YOUR_FORM_ID` in the `action="..."` line.
-
-## Updating + publishing
+## Files in this bundle
 ```
-cd /Users/christianrobinson/Desktop/Ominignis/Site/omnignis-full
-# copy the new files in, then:
-git rm cart.html        # removes the old page (only needed once)
+index.html  dental.html  services.html  about.html  contact.html
+book.html   churches.html  privacy.html  terms.html  data-deletion.html
+404.html    assets/styles.css   assets/nav.js (unchanged)
+```
+Not included (unchanged, keep yours): `vercel.json`, `assets/` images (favicon.png, og-image.png, emblem.webp, emblem-nav.webp).
+
+## Deploy
+```
+cd ~/Desktop/Ominignis/Site/omnignis-full
+# unzip omnignis-site-v3.zip here (it overwrites the html + assets/styles.css + assets/nav.js)
 git add .
-git commit -m "Redesign: cybersecurity + software dev, booking, churches page"
+git commit -m "v3: porcelain design system site-wide, cybersecurity-first, dental in nav"
 git push
 ```
 Vercel redeploys in ~20 seconds. Refresh omnignis.com in a private window to skip the cache.
 
+## Before you send the dental link to anyone
+1. Confirm the BU degree line on index + about ("master's in computer science, cybersecurity concentration") — if not yet conferred, add "(2026)".
+2. Click through the Calendly embed on /book once end-to-end.
+3. Send `omnignis.com/dental` — that's the page for the phone calls.
+
 ## Note on the church portal
-The Churches page describes the service and points people to reach out. The actual
-sign-in + "Connect Facebook" + automated Sunday report is a **separate app**
-(portal.omnignis.com) — it can't live in this static site. That build is next.
+Unchanged: the Churches page describes the service; the actual app lives at
+portal.omnignis.com (separate build, pending Meta business verification).
