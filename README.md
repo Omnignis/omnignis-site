@@ -1,15 +1,16 @@
-# Omnignis — website (v3, porcelain)
+# Omnignis website (v3, porcelain)
 
 Static site, no build step. Edit files, `git push`, Vercel auto-deploys.
 
 ## What changed in v3
+- **House style: no em dashes anywhere in site copy.** Use commas, colons, periods, or parentheses instead.
 - **One design system, every page.** All pages now share `assets/styles.css`, derived from the dental page: porcelain background, blue-slate ink, ember accent, Bricolage Grotesque + Public Sans + IBM Plex Mono. The old dark Fraunces theme is gone.
 - **Repositioned: cybersecurity first.** Nav brand reads OMNIGNIS / CYBERSECURITY. Services page leads with Assess & Harden → Ongoing Protection → Custom Software (on request) → Churches. "Security Snapshot" renamed **Cybersecurity Snapshot**.
 - **Header:** black link text, `Home` link on every page, brand mark always returns home. `Dental` added to the nav and footer site-wide.
 - **New pages on the system:** index and dental now use the shared stylesheet (was inline CSS); services, about, contact, book, churches, privacy, terms, data-deletion, and 404 all restyled.
-- **"What we don't do"** (cameras/alarms, 24/7 IR, investigations) now appears on index AND services — keep this; it's a legal guardrail, not just copy.
-- **CTA wording unified to "Book a call"** — the Calendly event is 30 minutes, so pages no longer promise a "15-minute" call.
-- **Nav mark is an inline SVG flame** (matches the dental page) — no dependency on emblem-nav.webp contrast against the light background. `assets/emblem.webp` is still used on About (and can be swapped back into the nav if it reads well on porcelain).
+- **"What we don't do"** (cameras/alarms, 24/7 IR, investigations) now appears on index AND services. Keep this; it's a legal guardrail, not just copy.
+- **CTA wording unified to "Book a call".** The Calendly event is 30 minutes, so pages no longer promise a "15-minute" call.
+- **Nav mark is an inline SVG flame** (matches the dental page), with no dependency on emblem-nav.webp contrast against the light background. `assets/emblem.webp` is still used on About (and can be swapped back into the nav if it reads well on porcelain).
 
 ## Files in this bundle
 ```
@@ -30,9 +31,9 @@ git push
 Vercel redeploys in ~20 seconds. Refresh omnignis.com in a private window to skip the cache.
 
 ## Before you send the dental link to anyone
-1. Confirm the BU degree line on index + about ("master's in computer science, cybersecurity concentration") — if not yet conferred, add "(2026)".
+1. Confirm the BU degree line on index + about ("master's in computer science, cybersecurity concentration"); if not yet conferred, add "(2026)".
 2. Click through the Calendly embed on /book once end-to-end.
-3. Send `omnignis.com/dental` — that's the page for the phone calls.
+3. Send `omnignis.com/dental`. That's the page for the phone calls.
 
 ## Note on the church portal
 Unchanged: the Churches page describes the service; the actual app lives at

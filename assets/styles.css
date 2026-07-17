@@ -1,5 +1,5 @@
 /* ============================================================
-   OMNIGNIS — unified stylesheet (v3, porcelain system)
+   OMNIGNIS unified stylesheet (v3, porcelain system)
    One file styles every page. Derived from the dental page.
    Fonts: Bricolage Grotesque (display) · Public Sans (body)
           IBM Plex Mono (citations/labels)
@@ -8,18 +8,18 @@
 :root{
   --porcelain:#F6F8F9;
   --ink:#16232B;
-  --nav-ink:#0E1114;          /* header text — black per request */
+  --nav-ink:#0E1114;          /* header text: black per request */
   --slate:#44586A;
   --muted:#44586A;            /* legacy alias used by inline styles */
   --line:#D8E0E5;
   --ember:#E4572E;
   --ember-deep:#A93815;
-  --ember-hi:#C2410C;         /* legacy alias — accent text on light bg */
+  --ember-hi:#C2410C;         /* legacy alias: accent text on light bg */
   --deep:#0E1A21;
   --card:#FFFFFF;
   --maxw:1060px;
   --radius:10px;
-  --serif:'Bricolage Grotesque',sans-serif;  /* legacy alias — display */
+  --serif:'Bricolage Grotesque',sans-serif;  /* legacy alias: display */
   --sans:'Public Sans',system-ui,sans-serif;
   --mono:'IBM Plex Mono',monospace;
 }
@@ -182,7 +182,7 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.015em}
 .facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;list-style:none}
 .facts li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.94rem}
 .facts li:last-child{border-bottom:none}
-.facts li::before{content:"—";color:var(--ember);margin-right:10px;font-weight:700}
+.facts li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--ember);margin-right:11px;vertical-align:2px}
 
 /* ---------- About page ---------- */
 .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
@@ -226,7 +226,7 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.015em}
 .pkg ul{list-style:none;margin-bottom:18px;flex:1}
 .pkg li{padding:7px 0;font-size:.93rem;color:var(--slate);border-bottom:1px solid var(--line)}
 .pkg li:last-child{border-bottom:none}
-.pkg li::before{content:"—";color:var(--ember);margin-right:9px;font-weight:700}
+.pkg li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--ember);margin-right:10px;vertical-align:2px}
 .intro-note{margin-top:20px;font-size:.9rem;color:var(--slate)}
 
 /* ---------- Dental: how (numbered) ---------- */
@@ -248,7 +248,7 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.015em}
 .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-family:var(--serif);font-size:1.4rem;color:var(--ember);flex-shrink:0}
-.faq details[open] summary::after{content:"–"}
+.faq details[open] summary::after{content:"\2212"}
 .faq .body{padding:0 22px 20px;color:var(--slate);font-size:.95rem}
 .faq .body p + p{margin-top:10px}
 
