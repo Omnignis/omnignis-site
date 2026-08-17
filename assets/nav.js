@@ -101,3 +101,26 @@ document.addEventListener('click', function (e) {
 
   sync();
 })();
+
+// ---- Member-aware portal link ----
+// omnignis.com and portal.omnignis.com are separate origins, so this page
+// cannot read the portal's Supabase session. The portal instead sets a
+// non-sensitive hint cookie on .omnignis.com while a session exists. It holds
+// no token: it only says "this browser is signed in", so the nav can offer
+// "My account" instead of asking a member to sign in again.
+(function () {
+  var signedIn = /(?:^|;\s*)omnignis_member=1(?:\s*;|\s*$)/.test(document.cookie);
+  if (!signedIn) return;
+
+  var links = document.querySelectorAll('a[href*="portal.omnignis.com"]');
+  Array.prototype.forEach.call(links, function (a) {
+    var label = (a.textContent || '').trim().toLowerCase();
+    if (label === 'sign in' || label === 'portal sign in') {
+      a.textContent = 'My account';
+      a.setAttribute('href', 'https://portal.omnignis.com/dashboard');
+    } else if (label === 'create an account') {
+      a.textContent = 'Go to my dashboard';
+      a.setAttribute('href', 'https://portal.omnignis.com/dashboard');
+    }
+  });
+})();
