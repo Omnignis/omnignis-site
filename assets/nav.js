@@ -55,3 +55,49 @@ document.addEventListener('click', function (e) {
     io.observe(el);
   });
 })();
+
+// ---- Theme switch ----
+// The <head> of every page sets data-theme before first paint so there is no
+// flash of the wrong theme. This only handles the click and the persistence.
+(function () {
+  var KEY = 'omnignis-theme';
+  var root = document.documentElement;
+
+  function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+
+  function sync() {
+    var dark = isDark();
+    var buttons = document.querySelectorAll('.theme-toggle');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-checked', dark ? 'true' : 'false');
+      buttons[i].setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  function apply(dark, remember) {
+    if (dark) root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    if (remember) { try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {} }
+    sync();
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.theme-toggle');
+    if (!btn) return;
+    apply(!isDark(), true);
+  });
+
+  // Follow the OS while the visitor has not made an explicit choice.
+  try {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function (ev) {
+      var stored = null;
+      try { stored = localStorage.getItem(KEY); } catch (e) {}
+      if (!stored) apply(ev.matches, false);
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  } catch (e) {}
+
+  sync();
+})();

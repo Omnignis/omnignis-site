@@ -16,6 +16,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 
+<script>
+/* Set the theme before first paint so there is no flash of the wrong one. */
+(function(){try{var s=localStorage.getItem('omnignis-theme');
+var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+if(d)document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+</script>
 </head>
 <body>
 
@@ -33,6 +39,11 @@
       <a class="link active" href="contact.html">Contact</a>
       <a href="https://portal.omnignis.com/login" class="btn btn-ghost">Sign in</a>
       <a href="book.html" class="btn btn-ember">Book a call</a>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode">
+        <span class="tt-track"><span class="tt-thumb">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+        </span></span>
+      </button>
     </div>
   </div>
 </nav>

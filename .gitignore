@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.next/
+out/
+.vercel/
+__pycache__/
+*.pyc
+
+# The portal/ directory here is a stale duplicate of Site/portal.
+# Its own .gitignore covers env files; this catches the rest.
+.env*
+!.env.example
